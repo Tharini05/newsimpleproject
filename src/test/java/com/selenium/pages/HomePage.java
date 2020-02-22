@@ -1,4 +1,21 @@
 package com.selenium.pages;
 
-public class HomePage {
+import com.selenium.driver.DriverFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class HomePage extends DriverFactory
+{
+    @FindBy(css = "input[data-test='search-input']")
+    WebElement searchBox;
+    public void doSearch(String item) {
+      searchBox.sendKeys(item);
+      searchBox.sendKeys(Keys.ENTER);
+    }
+    public String getCurrentUrl()
+    {
+        return driver.getCurrentUrl();
+    }
 }
