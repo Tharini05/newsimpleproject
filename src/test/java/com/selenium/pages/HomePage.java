@@ -8,11 +8,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends DriverFactory
 {
-    //@FindBy(css = "input[data-test='search-input']")
-    //WebElement searchBox;
+    @FindBy(css = "input[data-test='search-input']")
+    WebElement searchBox;
     public void doSearch(String item) {
-      driver.findElement(By.id("searchTerm")).sendKeys(item);
-        driver.findElement(By.id("searchTerm")).sendKeys(Keys.ENTER);
+      searchBox.sendKeys(item);
+      searchBox.sendKeys(Keys.ENTER);
     }
     public String getCurrentUrl()
     {
