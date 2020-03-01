@@ -1,6 +1,7 @@
 package com.selenium;
 
 import com.selenium.driver.DriverFactory;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 public class Hooks
@@ -14,7 +15,7 @@ public class Hooks
         driverManager.applyImpcitWait();
     }
 
-    // @After
+    @After
     public void tearDown(){
         driverManager.closeBrowser();
     }
